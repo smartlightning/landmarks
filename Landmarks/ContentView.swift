@@ -16,11 +16,16 @@ struct ContentView: View {
                 Text("Turtle Rock").font(.largeTitle).foregroundColor(.green)
                 HStack {
                     Text("Joshua Tree National Park")
-                        .font(.subheadline)
-                    .fontWeight(.regular)
                     Spacer()
                     Text("California")
                 }
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+                
+                Divider()
+                
+                Text("About Turtle Rock").font(.title2)
+                Text("Descriptive text")
             }
             .padding()
             Spacer()
