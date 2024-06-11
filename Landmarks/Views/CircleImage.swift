@@ -1,24 +1,27 @@
-//
-//  CircleImage.swift
-//  Landmarks
-//
-//  Created by Chris McQueen on 29.05.24.
-//
-
+// Circle image view
 import SwiftUI
 
+// Struct for creating a circular image view
 struct CircleImage: View {
+    // Image to be displayed
+    var image: Image
+    
+    // Body of the circle image view
     var body: some View {
-        Image("turtlerock")
-            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-            .overlay{
+        // Display image clipped to a circle
+        image
+            .clipShape(Circle())
+            // Overlay a white circle stroke
+            .overlay {
                 Circle().stroke(.white, lineWidth: 4)
             }
-            .shadow(radius: /*@START_MENU_TOKEN@*/7/*@END_MENU_TOKEN@*/)
-            
+            // Add a shadow with a radius of 7
+            .shadow(radius: 7)
     }
 }
 
+// Preview for the circle image view
 #Preview {
-    CircleImage()
+    CircleImage(image: Image("Turtlerock"))
 }
+
