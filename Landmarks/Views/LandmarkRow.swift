@@ -16,14 +16,20 @@ struct LandmarkRow: View {
             Text(landmark.name)
             // Add a spacer to push content to the edges
             Spacer()
+            
+            if landmark.isFavorite {
+                Image(systemName: "star.fill")
+                    .foregroundColor(.yellow)
+            }
         }
     }
 }
 
 // Preview for the landmark row view
 #Preview {
+    let landmarks = ModelData().landmarks
     // Group to preview multiple landmark rows
-    Group {
+    return Group {
         LandmarkRow(landmark: landmarks[0])
         LandmarkRow(landmark: landmarks[1])
     }

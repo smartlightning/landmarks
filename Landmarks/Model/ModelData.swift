@@ -1,7 +1,13 @@
 import Foundation
+// use the Observable to support data changes without wrappers or bindings
+// SWiftUI wathces for changes in the observable property and displays the desired view
+@Observable
+class ModelData {
+    // Load the landmarks data from JSON file
+    var landmarks: [Landmark] = load("landmarkData.json")
+}
 
-// Load the landmarks data from JSON file
-var landmarks: [Landmark] = load("landmarkData.json")
+
 
 // Function to load and decode JSON data from a file
 func load<T: Decodable>(_ filename: String) -> T {
