@@ -9,6 +9,9 @@ class ModelData {
     // load hikes into model
     var hikes:[Hike] = load("hikeData.json")
     
+    // instance of profile view
+    var profile = Profile.default
+    
     var features: [Landmark] {
         landmarks.filter { $0.isFeatured }
     }

@@ -31,6 +31,10 @@ struct Landmark: Hashable, Codable, Identifiable {
     var image: Image {
         Image(imageName)
     }
+    // feature image if it exists
+    var featureImage: Image? {
+        isFeatured ? Image(imageName + "_feature") : nil
+    }
     // Private property for the coordinates
     private var coordinates: Coordinates
     // Computed property to get the location coordinates
